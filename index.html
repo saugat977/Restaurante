@@ -33,8 +33,8 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text ">
+                    <a id="loginBtn" >
                         <span class="fa fa-sign-in"></span>
                         Login
                     </a>
@@ -51,7 +51,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close closeModal" >
                         &times;
                     </button>
                 </div>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto closeModal">
                                 Cancel
                             </button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">
@@ -102,7 +102,7 @@
                 <div class="card " id="reserveform">
                     <div class="modal-header">
                         <h2 class="  modal-title"> Reserve a Table</h2>
-                        <button type="button" class="close" data-dismiss="modal">
+                        <button type="button" class="close closeModal">
                             &times;
                         </button>
                     </div>
@@ -158,7 +158,7 @@
                             </div>
                             <div class="form-group row ">
                                 <div class="col-sm-3 offset-sm-3 ">
-                                    <button class="btn btn-secondary mt-1" data-dismiss="modal"> Cancel</button>
+                                    <button class="btn btn-secondary mt-1 closeModal"> Cancel</button>
                                     <button class="btn btn-primary mt-1"> Reserve</button>
                                 </div>
                                 
@@ -188,7 +188,7 @@
                 <div class="col-12 col-sm-3 my-3 ">
                     <span data-toggle="tooltip"  data-html="true"
                     title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="top">
-                    <a class=" btn btn-block btn-warning " data-toggle="modal" data-target="#reserveModal"
+                    <a class=" btn btn-block btn-warning " id="reserveBtn"
                         >
                         
                         Reserve Table</a>
@@ -390,6 +390,19 @@
     <script>
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
+
+            $('#loginBtn').click( function () {
+                $('#loginModal').modal();
+            });
+
+            $('#reserveBtn').click( function () {
+                $('#reserveModal').modal();
+            });
+
+            $('.closeModal').click( function () {
+                $('.modal').modal('hide');
+            })
+
             $('#mycarousel').carousel({interval:2000})
             $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
@@ -407,6 +420,12 @@
         });
 
        
+    </script>
+    <script>
+        $(document).ready( function () {
+           
+        })
+         
     </script>
 </body>
 

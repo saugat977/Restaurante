@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('#reserveBtn').click( function () {
         $('#reserveModal').modal();
     });
-
+    
     // closing modal
     $('.closeModal').click( function () {
         $('.modal').modal('hide');
